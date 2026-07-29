@@ -24,6 +24,8 @@ from PySide6.QtWidgets import (
     QPlainTextEdit, QPushButton, QVBoxLayout, QWidget,
 )
 
+__version__ = "1.0.0"
+
 DEVICE_ID_RE = re.compile(r"^\d{8}$")
 
 
@@ -124,7 +126,7 @@ def convert_folder(source_dir, dest_dir):
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.setWindowTitle("VEET CSV -> Parquet Converter")
+        self.setWindowTitle(f"VEET CSV -> Parquet Converter — v{__version__}")
         self.resize(640, 420)
 
         self.source_dir = None
